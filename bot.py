@@ -3,16 +3,16 @@ import logging
 import telebot
 from telebot import types
 
-import settings
 from calc import Calc
-from calc import Getting_data as gd
+from calc import GettingData as gd
 
 logging.basicConfig(filename='bot.log',
                     format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 log = logging.getLogger('Bot')
-bot = telebot.TeleBot(settings.API_KEY)
+bot = telebot.TeleBot("1984568671:AAGvrGzoBsM_LEFDZfnVZa5-vnV3cXmaHKM")
 string_2_write = ''
 
+log.info("Bot started")
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):

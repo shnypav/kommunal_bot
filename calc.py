@@ -5,8 +5,9 @@ logging.basicConfig(filename='bot.log',
 log = logging.getLogger('Bot')
 
 
-class Getting_data():
+class GettingData():
 
+    @staticmethod
     def read_f():
         with open('data.txt', 'r+') as f:
             last_line = f.readlines()[-1]
@@ -14,17 +15,20 @@ class Getting_data():
         last_line_int = list(last_line)
         return last_line_int
 
+    @staticmethod
     def got_new():
         new = input('Введи 4 числа через пробел (Т1, Т2, Горячая, Холодная): ')
         new = map(int, new.split())
         new_int = list(new)
         return new_int
 
+    @staticmethod
     def get_all_data():
         with open('data.txt', 'r') as f:
             all_data = f.read()
         return all_data
 
+    @staticmethod
     def get_changes_history():
         prev = [0, 0, 0, 0]
         difference_full = ''
@@ -49,8 +53,9 @@ class Getting_data():
 class Calc():
 
     def calc(new_data):
+        ss = []
         a = False
-        old_data = Getting_data.read_f()
+        old_data = GettingData.read_f()
         # new_data = Getting_data.got_new()
 
         t1, t2, gor, hol = old_data
@@ -68,7 +73,7 @@ class Calc():
 
         if a == False:
             sum = ((new_t1 - t1) * 5.92) + ((new_t2 - t2) * 1.74) + \
-                 ((new_gor - gor) * 205.15) + ((new_hol - hol) * 42.30)
+                  ((new_gor - gor) * 205.15) + ((new_hol - hol) * 42.30)
             s_svet = ((new_t1 - t1) * 5.92) + ((new_t2 - t2) * 1.74)
             s_voda = ((new_gor - gor) * 205.15) + ((new_hol - hol) * 42.30)
             ss = [sum, s_svet, s_voda]
