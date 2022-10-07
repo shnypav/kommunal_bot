@@ -14,6 +14,7 @@ string_2_write = ''
 
 log.info("Bot started")
 
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
