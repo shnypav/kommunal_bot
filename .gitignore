@@ -2,5 +2,10 @@
 settings.py
 bot.log
 
-.idea
-.fleet
+.idea/
+.fleet/
+
+__pycache__/
+
+venv
+venv2
