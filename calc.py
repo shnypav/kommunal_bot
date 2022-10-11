@@ -5,10 +5,10 @@ logging.basicConfig(filename='bot.log',
 log = logging.getLogger('Bot')
 
 
-class GettingData():
+class GettingData:
 
     @staticmethod
-    def read_f():
+    def read_f() -> object:
         with open('data.txt', 'r+') as f:
             last_line = f.readlines()[-1]
         last_line = map(int, last_line.split(','))
@@ -50,7 +50,7 @@ class GettingData():
         return post_string
 
 
-class Calc():
+class Calc:
 
     def calc(new_data):
         ss = []
@@ -71,7 +71,7 @@ class Calc():
                 a = True
                 return 'Новые значения меньше предыдущих'
 
-        if a == False:
+        if not a:
             sum = ((new_t1 - t1) * 5.92) + ((new_t2 - t2) * 1.74) + \
                   ((new_gor - gor) * 205.15) + ((new_hol - hol) * 42.30)
             s_svet = ((new_t1 - t1) * 5.92) + ((new_t2 - t2) * 1.74)
