@@ -33,7 +33,7 @@ def menu(message):
         if message.text == 'Последние':
             log.info('Запрошены последние показания')
             last = gd.read_f()
-            a = 2
+            a = 6
             log.info(last)
             t1, t2, gor, hol = last
             mes = f'Прошлые показания: Т1 = {t1}, Т2 = {t2}, Горячая = {gor}, Холодная = {hol}'
