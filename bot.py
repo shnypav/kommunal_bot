@@ -11,7 +11,7 @@ logging.basicConfig(filename='bot.log',
 log = logging.getLogger('Bot')
 bot = telebot.TeleBot("1984568671:AAGvrGzoBsM_LEFDZfnVZa5-vnV3cXmaHKM")
 string_2_write = ''
-
+print("hello amended")
 log.info("Bot started")
 
 
